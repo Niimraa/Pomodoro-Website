@@ -1,4 +1,4 @@
-# Pomodoro
+# Pomodoro website
 A very simple website to to boost productivity and manage time effectively using the renowned Pomodoro Technique. 
 
 
