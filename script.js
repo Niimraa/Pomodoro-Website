@@ -6,7 +6,7 @@ document.getElementById("startButton").addEventListener("click", function() {
     if (isRunning) {
         clearInterval(timer);
         isRunning = false;
-        this.textContent = "Resume";
+        this.textContent = "Start";
     } else {
         timer = setInterval(updateTimer, 1000);
         isRunning = true;
@@ -27,6 +27,8 @@ document.getElementById("optionsButton").addEventListener("click", function() {
     options.style.display = options.style.display === "none" ? "flex" : "none";
 });
 
+
+
 document.getElementById("setTimerButton").addEventListener("click", function() {
     const hours = parseInt(document.getElementById("hours").value) || 0;
     const minutes = parseInt(document.getElementById("minutes").value) || 0;
@@ -44,8 +46,7 @@ document.getElementById("setTimerButton").addEventListener("click", function() {
 
 document.getElementById("modeToggle").addEventListener("click", function() {
     document.body.classList.toggle("dark-mode");
-    const buttonText = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
-    this.textContent = buttonText;
+    this.textContent = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
 });
 
 function updateTimer() {
@@ -53,10 +54,17 @@ function updateTimer() {
         clearInterval(timer);
         isRunning = false;
         document.getElementById("startButton").textContent = "Start";
+        playSound(); // Play sound when timer ends
     } else {
         totalSeconds--;
         updateTimerDisplay();
     }
+}
+
+// Function to play sound
+        function playSound() {
+    var sound = document.getElementById("alertSound");
+    sound.play();
 }
 
 function updateTimerDisplay() {
@@ -73,3 +81,23 @@ function formatTime(value) {
 
 // Initial display setup
 updateTimerDisplay();
+
+function addTodoItem() {
+const todoList = document.getElementById("todoList");
+const newItemText = document.getElementById("newTodoItem").value.trim();
+
+if (newItemText !== "") {
+const listItem = document.createElement("li");
+listItem.innerHTML = `
+    <input type="checkbox" class="todo-checkbox">
+    <span class="todo-item-text">${newItemText}</span>
+    <button class="delete-btn" onclick="deleteTodoItem(this)">Delete</button>
+`;
+todoList.appendChild(listItem);
+document.getElementById("newTodoItem").value = ""; // Reset input field
+}
+}
+
+function deleteTodoItem(button) {
+button.parentElement.remove();
+}
