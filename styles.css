@@ -4,20 +4,81 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    min-height: 100vh;
 }
 
-.timer-container {
+nav.container-fluid {
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+}
+
+nav ul.nav-left {
+    justify-content: flex-start;
+}
+
+nav ul.nav-right {
+    justify-content: flex-end;
+}
+
+nav a, nav li button {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* Main Container Styles */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+.intro-container {
     text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #e3f2fd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-container h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.intro-container p {
+    color: #555;
+    font-size: 1.1em;
+}
+
+/* Timer Section */
+.timer-container {
+    background-color: #e3f2fd;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .timer {
@@ -27,58 +88,171 @@ body {
 
 .buttons {
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
-/* Add the timer and buttons within the container class */
-.timer-container, .buttons {
-    text-align: center;
-}
-
-.options-container {
-    text-align: center;
-}
-
-.options {
-    display: none;
-    flex-direction: column;
-    margin-top: 10px;
-}
-
-button#optionsButton {
-    margin-top: 20px;
-}
-
-.mode-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-button#modeToggle {
+button {
     background-color: #3498db;
     color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
 }
 
-.text-box {
-    text-align: center;
-    margin-top: 20px;
+button:hover {
+    background-color: #2878a9;
 }
 
-/* Dark Mode Styles */
+
 .dark-mode {
-    background-color: #333;
-    color: #fff;
+    background-color: #263238; 
+    color: #CFD8DC; 
+}
+
+.dark-mode nav.container-fluid {
+    background-color: #37474f; /* Darker background for the nav bar */
+}
+
+.dark-mode nav ul.nav-left li strong {
+    color:#CFD8DC 
+}
+
+
+.dark-mode nav a, .dark-mode nav li button {
+    color: #CFD8DC; 
+}
+
+
+.dark-mode .intro-container {
+    background-color: #546e7a;
+}
+
+.dark-mode .intro-container h1, .dark-mode .intro-container p {
+    color: #CFD8DC;
+}
+
+
+.dark-mode input[type="text"], .dark-mode input[type="number"] {
+    background-color: #607D8B;
+    color: #CFD8DC;
+    border-color: #78909C;
+}
+
+
+
+.dark-mode .container {
+    background-color: #455a64; 
+}
+
+.dark-mode .timer-container {
+    background-color: #546e7a; /* Slightly different background for timer */
 }
 
 .dark-mode .timer {
-    color: #fff;
+    color: #CFD8DC; /* Light color for timer text */
 }
 
-.text-box input#textInput {
-    width: 300px;
-    height: 60px;
+
+
+.dark-mode input {
+    background-color: #607D8B; 
+    color: #CFD8DC;
+    border-color: #78909C; 
+}
+
+.dark-mode ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #CFD8DC;
+    opacity: 1; /* Firefox */
+}
+
+.dark-mode :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #CFD8DC;
+}
+
+.dark-mode ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #CFD8DC;
+}
+
+/* TO Do list */
+
+#todoListSection {
+    margin-top: 20px;
     text-align: center;
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+#todoListContainer {
+    margin-top: 10px;
+}
+
+#newTodoItem {
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 4px;
+    border: 1px solid #bdbdbd;
+    width: 70%; 
+}
+
+#todoList {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+#todoList li {
+    background-color: #e0e0e0;
+    margin-top: 8px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjust content spacing */
+}
+
+.todo-checkbox {
+    margin-right: 10px;
+}
+
+.todo-item-text {
+    flex-grow: 1;
+}
+
+.delete-btn {
+    background-color: #ff1744;
+    color: white;
+    border: none;
+    padding: 6px 2px;
+    font-size: 0.9em; 
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background-color: #f01440;
+}
+
+/* Dark Mode Styles for To-Do List */
+.dark-mode #todoListSection {
+    background-color: #455a64;
+    color: #CFD8DC;
+}
+
+.dark-mode #todoList li {
+    background-color: #546e7a;
+}
+
+.dark-mode #newTodoItem {
+    background-color: #607D8B;
+    color: #CFD8DC;
+    border-color: #78909C;
 }
