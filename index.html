@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <div class="container">
-        <div class="flex-container">
+    <nav class="container-fluid">
+        <ul class="nav-left">
+            <li><strong>Pomodoro Timer</strong></li>
+        </ul>
+        <ul class="nav-right">
+            <li><button id="modeToggle">Dark Mode</button></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="introSection" class="intro-container">
+            <h1>Welcome to the Pomodoro Timer</h1>
+            <p>Stay focused and manage your time effectively.</p>
+        </section>
+
+        <section id="timerSection">
             <div class="timer-container">
                 <div class="timer">
                     <span id="display">00:00:00</span>
@@ -15,23 +32,31 @@
                 <button id="startButton">Start</button>
                 <button id="resetButton">Reset</button>
             </div>
-        </div>
-        <div class="options-container">
-            <button id="optionsButton">Set Timer</button>
-            <div class="options">
-                <input type="number" id="hours" min="0" placeholder="Hours">
-                <input type="number" id="minutes" min="0" max="59" placeholder="Minutes">
-                <input type="number" id="seconds" min="0" max="59" placeholder="Seconds">
-                <button id="setTimerButton">Set</button>
+            <div class="options-container">
+                <button id="optionsButton">Set Timer</button>
+                <div class="options">
+                    <input type="number" id="hours" min="0" placeholder="Hours">
+                    <input type="number" id="minutes" min="0" max="59" placeholder="Minutes">
+                    <input type="number" id="seconds" min="0" max="59" placeholder="Seconds">
+                    <button id="setTimerButton">Set</button>
+                </div>
             </div>
+        </section>
+    </main>
+
+    <section id="todoListSection">
+        <h2>To-Do List</h2>
+        <div id="todoListContainer">
+            <input type="text" id="newTodoItem" placeholder="Add new item">
+            <button onclick="addTodoItem()">Add Item +</button>
+            <ul id="todoList">
+                <!-- To-Do items will be added here -->
+            </ul>
         </div>
-        <div class="text-box">
-            <input type="text" id="textInput" placeholder="What would you like to accomplish?" style="width: 300px; height: 60px; text-align: center;">
-        </div>
-    </div>
-    <div class="mode-toggle">
-        <button id="modeToggle">Dark Mode</button>
-    </div>
+    </section>
+    
+    <audio id="alertSound" src="https://github.com/anars/blank-audio/blob/master/250-milliseconds-of-silence.mp3" preload="auto"></audio>
+
     <script src="script.js"></script>
 </body>
 </html>
