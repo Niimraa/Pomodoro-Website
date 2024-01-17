@@ -5,7 +5,7 @@ Welcome to the Pomodoro Timer Web Application project! This application is desig
 ### Features
 - **Pomodoro Timer**: A customizable timer that follows the Pomodoro Technique to boost productivity.
 - **Dark Mode**: Users can switch between light and dark themes for comfortable viewing.
-- **To-Do List**: Keep track of tasks and manage daily activities.
+- **To-Do List**:Efficiently plan tasks for each Pomodoro session, adding items with checkboxes to track and mark off completed activities.
 - **Sound Alerts**: An audible alert that sounds when a Pomodoro session ends to enhance user experience.
 
 
