@@ -247,6 +247,10 @@ button:hover {
     color: #CFD8DC;
 }
 
+.dark-mode #todoListSection h2 {
+    color:  #CFD8DC;
+}
+
 .dark-mode #todoList li {
     background-color: #546e7a;
 }
