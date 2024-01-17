@@ -9,4 +9,4 @@ Welcome to the Pomodoro Timer Web Application project! This application is desig
 - **Sound Alerts**: An audible alert that sounds when a Pomodoro session ends to enhance user experience.
 
 
-![image](https://github.com/Niimraa/Pomodoro-Website/assets/133609979/13c0a700-e7e0-4480-ba00-b8e4fd4caf12)
+![image](https://github.com/Niimraa/Pomodoro-Website/assets/133609979/bdca9997-d14e-4f58-9f48-72a6c6b542a5)
